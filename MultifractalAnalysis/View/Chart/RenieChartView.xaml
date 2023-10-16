@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="MultifractalAnalysis.View.Chart.RenieChartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MultifractalAnalysis;assembly=MultifractalAnalysis"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" 
+             xmlns:chart="clr-namespace:MultifractalAnalysis.ViewModel.Chart" d:DataContext="{d:DesignInstance Type=chart:RenieChartVM}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <lvc:CartesianChart>
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries Values="{Binding Points}"/>
+            </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Варьируемый параметр - q" Labels="{Binding Labels}"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Обобщенные спектры размерностей Реньи - Dq"/>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>  
+    </Grid>
+</UserControl>
